@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block body%}
+{% if done|length==0%}
+<div class="alert alert-success mt-5" role="alert">
+    No Todos to show, Complete a Todo Now <a href="/home">Home</a>
+</div>
+{% else %}
+
+<div class="container my-4">
+    <h1 class="text-center mt-5 pt-5">Completed Todo</h1>
+    <div class="container text-end">
+        <a href="/drop" type="button" class="btn btn-danger mb-3">Clear All
+        </a>
+    </div>
+    <table class="table table-success table-striped text-center">
+        <thead>
+            <tr>
+                <th scope="col">S.no</th>
+                <th scope="col">Title</th>
+                <th scope="col">Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in done %}
+            <tr>
+                <th scope="row">{{loop.index}}</th>
+                <td>{{i.title}}</td>
+                <td>{{i.desc}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endif %}
+{% endblock body%}
