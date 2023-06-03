@@ -27,13 +27,9 @@
   </div>
 </div>
 
-{% if alltodos|length <=0%} <div class="d-flex alert alert-success justify-content-center align-items-center"
-  role="alert">
-  <div class="text-start" style="width: 80vw">
+{% if alltodos|length <=0%} <div class="text-start alert alert-success">
+  <div class="mx-auto" style="width: 80vw">
     No Todos to show, Add a Todo, Completed it and Check your <a href="/completed">Completed</a> Todos
-  </div>
-  <div class="text-end" style="width: 80vw">
-    <a href="/home" type="button" class="btn btn-danger btn-small disable">X</a>
   </div>
   </div>
   {% else %}
